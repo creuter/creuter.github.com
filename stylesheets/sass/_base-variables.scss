@@ -1,0 +1,39 @@
+//************************************************************************//
+// Base Variables
+//************************************************************************//
+
+$base-border-color:   #000;
+$border-color: #000;
+
+$base-font-family:      $helvetica;
+$base-font-family-alt:  $georgia;
+
+$fase-font-size:      16px;
+$fase-font-size-alt:  13px;
+
+$base-font-color:     #333;
+$base-font-color-alt: #CCC;
+
+$base-link-color:     #BC4212;  // yellow
+$base-link-color-alt: #666;
+
+$sans: 'ff-meta-web-pro', $helvetica;
+$serif: 'chaparral-pro', $georgia;
+
+$lh: golden-ratio(1em, 1);
+
+@function lh($amount: 1) {
+  @return $lh * $amount;
+}
+
+
+// Grid - Neat overrides
+
+// $column: golden-ratio(1em, 3); // Column width
+// $gutter: golden-ratio(1em, 1); // Gutter between each two columns
+// $grid-columns: 12; // Total number of columns in the grid
+$max-width: 1140px; // Max-width of the outer container
+// $visual-grid: false; // Display the base grid
+// $visual-grid-color: #EEE;
+// $visual-grid-index: back; // Show grid behind content (back) or overlay it over the content (front)
+

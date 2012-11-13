@@ -1,69 +1,97 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
   <head>
-    <meta charset='utf-8' />
-    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
-    <meta name="description" content="jcreuter.github.com : " />
-
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
-
-    <title>jcreuter.github.com</title>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <title>Christian Reuter: Portfolio</title>
+    <link rel="stylesheet" href="stylesheets/application.css" media="screen">
+    <link href="webfonts/ss-social.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width; initial-scale=1.0">
+    <script type="text/javascript" src="//use.typekit.net/bql7kxs.js"></script>
+    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
   </head>
-
   <body>
 
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/jcreuter">View on GitHub</a>
+    <section class="container">
+      <header>
+        <hgroup>
+          <h1>Christian Reuter</h1>
+          <h3>Web &amp; Interface Designer, Front-End Developer</h3>
+        </hgroup>
+        <section id="contact">
+          <a href="mailto:christian@apprentice.io" class="button">Contact</a>
+        </section>
+      </header>
+    </section>
 
-          <h1 id="project_title">jcreuter.github.com</h1>
-          <h2 id="project_tagline"></h2>
+    <section class="container">
 
-        </header>
-    </div>
+      <section class="project">
+        <aside class="info">
+          <h2>Stattleship</h2>
+          <h3>Design, Front-end Development</h3>
+          <p>Client-work during my <a href="http://www.apprentice.io">apprenticeship</a> with <a href="http://www.thoughtbot.com">thoughtbot</a>, Stattleship wanted two static marketing sites to match their pre-existing branding.  They were built with <a href="https://github.com/mojombo/jekyll">jekyll</a> for rapid deployment and scalability in a brief two day sprint for an upcoming event.</p>
+          <p class="visit-wrap"><a href="http://www.stattleship.io" class="visit" >Visit Site</a></p>
+        </aside>
 
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
-        <h3>Welcome to GitHub Pages.</h3>
-
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
-
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
-</code></pre>
-
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
-
-<h3>Designer Templates</h3>
-
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
-
-<h3>Rather Drive Stick?</h3>
-
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
-
-<h3>Authors and Contributors</h3>
-
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
-
-<h3>Support or Contact</h3>
-
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
+        <section class="screenshots">
+          <img src="images/stattleship-responsive2.png">
+          <img src="images/stattleship.png">
+          <img src="images/fanboat.png">
+        </section>
       </section>
-    </div>
 
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
-      </footer>
-    </div>
+      <section class="project">
+        <aside class="info">
+          <h2>Geekshelf</h2>
+          <h3>Product Design, Design, Front-end Development, Identity</h3>
+          <p>Geekshelf is a 'breakable toy' project, a rails app built during my thoughtbot apprenticeship. It allows employees to upload resources (licensed books, screencasts, etc) to a shared dropbox account. Geekshelf then further interfaces with the files, allowing searching, tagging, and eventually comments and discussion. Access is limited with Github Authentication, so there's no need for independent account management.</p>
+        </aside>
 
-    
+        <section class="screenshots">
+          <img src="images/geekshelf.png">
+          <img src="images/geekshelf2.png">
+        </section>
+      </section>
 
+      <section class="project">
+        <aside class="info">
+          <h2>Phelps School</h2>
+          <h3>Design, Front-end Development</h3>
+          <p>The Phelps School is an all boy's boarding school located outside of Philadelphia. They sought an easy-to-update website, with options for tall, bold images, and mobile accessibility. I went with wordpress for content management, and hooked it up to use Sass and Haml. The site is fully responsive, and uses <a href="http://jasonweaver.name/lab/offcanvas/">Off Canvas Navigation</a> at the smallest breakpoint.</p>
+        </aside>
+
+        <section class="screenshots">
+          <img src="images/phelps-responsive.png" alt="" />
+          <img src="images/phelps.png">
+          <img src="images/phelps2.png">
+        </section>
+      </section>
+
+      <section class="project">
+        <aside class="info">
+          <h2>Presence iPhone app</h2>
+          <h3>Design, Front-end Development</h3>
+          <p>Presence is another breakable toy started while at thoughtbot. The client (a developer) wanted a tool to help train him to be more mindful and in the moment.  The application periodically pings the user, asking them if they're 'present'. It then adjusts the variable timeframe window for the next reminder, according to the user's input. The statistics view shows progress, both as binary results and as sparklines for trends.
+        </aside>
+        <section class="screenshots">
+          <img src="images/presence.png">
+          <img src="images/presence2.png">
+        </section>
+      </section>
+    </section>
+
+    <section class="footer-wrapper">
+      <section class="container">
+        <footer>
+          <ul class="links">
+            <li><a href="mailto:christian@apprentice.io" id="email" class="ss-icon">email</a></li>
+            <li><a href="http://dribbble.com/creuter" id="dribbble" class="ss-icon">dribbble</a></li>
+            <li><a href="http://github.com/jcreuter" id="github" class="ss-icon">github</a></li>
+            <li><a href="http://twitter.com/ufotofu" id="twitter" class="ss-icon ss-social-circle">twitter</a></li>
+          </ul>
+        </footer>
+      </section>
+    </section>
   </body>
 </html>

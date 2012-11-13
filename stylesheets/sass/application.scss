@@ -1,0 +1,269 @@
+
+@import 'bourbon/bourbon';
+@import 'base-variables';
+
+@import 'neat/neat';
+@import 'reset';
+
+@import 'animations';
+@import 'base';
+
+* {
+  h1, h2, h3, h4, h5 { 
+    line-height: lh();
+    font-family: $serif;
+  }
+  
+  h1 { 
+    font-size: 1.5em; 
+  }
+  
+  h2 { 
+    font-size: 1.3em;
+  }
+  
+  h3 { 
+    margin-bottom: lh();
+  }
+  
+  p { 
+    line-height: lh(.8);
+    font-family: $sans;
+   }
+
+  em {
+    font-style: italic;
+  }
+ }
+
+.container {
+  @include outer-container;
+  padding: 0 lh(2);
+  font-size: 16px;
+
+  @include breakpoint(max-width 520px) {
+    padding: lh(.5)
+  }
+}
+
+header {
+  margin: lh(3) 0; 
+  @include row;
+
+  @include breakpoint(max-width 520px) {
+    margin: lh() 0;
+  }
+
+  h3 { 
+    text-transform: none;
+  }
+  
+  hgroup { 
+    @include span-columns(8);
+
+    @include breakpoint(max-width 520px) {
+      @include span-columns(12);
+    }
+   }
+  
+  #contact { 
+    @include span-columns(4); 
+    padding-top: lh(.5);
+
+    @include breakpoint(max-width 520px) {
+      @include span-columns(12);
+    }
+    
+    a.button { 
+      @include appearance(none);
+      @include border-radius(3px);
+      @include box-shadow(inset 0px 0px 1px 1px rgba(255,255,255,.1), 0 1px 1px black);
+      @include linear-gradient(#444, #333);
+      border: 1px solid $border-color;
+      font-weight: 600;
+      color: white;
+      display: block;
+      float: right;
+      font-size: .875em;
+      padding: 10px 20px;
+
+      @include breakpoint(max-width 520px) {
+        display: inline-block;
+        text-align: center;
+        font-size: 1em;
+        padding: 20px 30px;
+        width: 100%;
+      }
+
+      &:hover {
+        @include linear-gradient(lighten(#444, 2%), lighten(#333, 2%));
+      }
+
+      &:active {
+        @include linear-gradient(#333, #444);
+        @include box-shadow(inset 0px 0px 2px 2px #333, 0px 1px #353535);
+      }
+    }
+  }
+}
+
+.project {
+  @include row;
+  @include span-columns(12);
+  margin-bottom: lh(2);
+  display: inline-block;
+  margin-right: 0;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  aside.info {
+    @include span-columns(3);
+
+    @include breakpoint(max-width 1140px) {
+      @include span-columns(5);
+    }
+
+    @include breakpoint(max-width 960px) {
+      @include span-columns(12);
+    }
+  }
+
+  section.screenshots {
+    @include span-columns(9);
+    @include omega;
+
+    &:last-child {
+      border-bottom: 0;
+    }
+
+    @include breakpoint(max-width 1140px) {
+      @include span-columns(7);
+    }
+
+    @include breakpoint(max-width 960px) {
+      @include span-columns(12);
+      margin: lh(2) 0;
+      border-bottom: 1px dotted black;
+
+      &:last-child {
+        margin-bottom: 0;
+        border-bottom: 0;
+      }
+    }
+
+    img {
+      @include border-radius(2px);
+      @include box-shadow(0 2px 2px black);
+      @include span-columns(12);
+      margin-bottom: lh(2);
+
+      @include breakpoint(max-width 540px) {
+        margin-top: 0;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}
+
+.footer-wrapper {
+
+  @include breakpoint(max-width 520px) {
+    margin-top: 0;
+    background-color: #222;
+    border-top: none;
+    padding-top: 2rem;
+    height: 8em;
+  }
+
+}
+
+footer {
+  @include row;
+
+  ul.links {
+    @include transition;
+    text-align: right;
+
+    @include breakpoint(max-width 520px) {
+      text-align: center;
+    }
+
+    li {
+      display: inline-block;
+      padding-top: 5px;
+      margin-left: 1em;
+
+      @include breakpoint(max-width 520px) {
+        margin-left: 1em;
+        padding-top: 0;
+      }
+
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+
+    a {
+      color: #333;
+      font-size: 3rem;
+      text-shadow: 0px 1px #333;
+
+      @include breakpoint(max-width 520px) {
+
+        &#twitter {
+          color: #00acee;
+        }
+
+        &#dribbble {
+          color: #f15e95;
+        }
+
+        &#github {
+          color: #aaa;
+        }
+
+        &#email {
+          color: #bc4212;
+        }
+
+
+      }
+
+      &#twitter:hover {
+        color: #00acee;
+       }
+
+      &#dribbble:hover {
+        color: #f15e95;
+        text-shadow: none;
+      }
+
+      &#github:hover {
+        color: #aaa;
+        text-shadow: none;
+      }
+
+      &#email:hover {
+        color: #bc4212;
+        text-shadow: none;
+      }
+    }
+  }
+}
+a:hover {
+  @include transition;
+}
+
+p.visit-wrap {
+  margin-top: lh();
+}
+
+a.visit {
+  margin-top: lh();
+  @extend .external-link;
+ }
