@@ -52,12 +52,12 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
-.force3d, .animation-slideup {
+.force3d, .animation-slideup, footer ul.links a#twitter:hover {
   -webkit-backface-visibility: hidden;
   -webkit-perspective: 1000;
   -webkit-transform-style: preserve-3d; }
 
-.animation-slideup {
+.animation-slideup, footer ul.links a#twitter:hover {
   -webkit-animation-name: slideup;
   -moz-animation-name: slideup;
   animation-name: slideup;
@@ -159,10 +159,10 @@ table {
   .clearfix:after {
     clear: both; }
 
-.external-link, a.visit {
+.external-link, * a.visit {
   background: url("/images/external-link.png") no-repeat right -8px;
   padding-right: 16px; }
-  .external-link:hover, a.visit:hover {
+  .external-link:hover, * a.visit:hover {
     background-position: right 8px; }
 
 body {
@@ -208,6 +208,16 @@ a:hover {
   font-family: "ff-meta-web-pro", "Helvetica Neue", Helvetica, Arial, sans-serif; }
 * em {
   font-style: italic; }
+* a:hover {
+  -webkit-transition: all 0.15s ease-out 0;
+  -moz-transition: all 0.15s ease-out 0;
+  -ms-transition: all 0.15s ease-out 0;
+  -o-transition: all 0.15s ease-out 0;
+  transition: all 0.15s ease-out 0; }
+* a.visit {
+  margin-top: 1.618em; }
+* p.visit-wrap {
+  margin-top: 1.618em; }
 
 .container {
   zoom: 1;
@@ -215,8 +225,8 @@ a:hover {
   text-align: left;
   margin-left: auto;
   margin-right: auto;
-  padding: 0 3.236em;
-  font-size: 16px; }
+  font-size: 16px;
+  padding: 0 3.236em; }
   .container:before, .container:after {
     content: "";
     display: table; }
@@ -239,7 +249,8 @@ header {
     header {
       margin: 1.618em 0; } }
   header h3 {
-    text-transform: none; }
+    text-transform: none;
+    margin-bottom: 0; }
   header hgroup {
     display: block;
     float: left;
@@ -289,18 +300,18 @@ header {
       background-image: -o-linear-gradient(top, #444444, #333333);
       background-image: linear-gradient(top, #444444, #333333);
       border: 1px solid black;
-      font-weight: 600;
       color: white;
       display: block;
       float: right;
       font-size: .875em;
+      font-weight: 600;
       padding: 10px 20px; }
       @media screen and (max-width: 520px) {
         header #contact a.button {
           display: inline-block;
-          text-align: center;
           font-size: 1em;
           padding: 20px 30px;
+          text-align: center;
           width: 100%; } }
       header #contact a.button:hover {
         background-color: #494949;
@@ -311,15 +322,15 @@ header {
         background-image: -o-linear-gradient(top, #494949, #383838);
         background-image: linear-gradient(top, #494949, #383838); }
       header #contact a.button:active {
+        -webkit-box-shadow: inset 0px 0px 2px 2px #333333, 0px 1px #353535;
+        box-shadow: inset 0px 0px 2px 2px #333333, 0px 1px #353535;
         background-color: #333333;
         background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #333333), color-stop(100%, #444444));
         background-image: -webkit-linear-gradient(top, #333333, #444444);
         background-image: -moz-linear-gradient(top, #333333, #444444);
         background-image: -ms-linear-gradient(top, #333333, #444444);
         background-image: -o-linear-gradient(top, #333333, #444444);
-        background-image: linear-gradient(top, #333333, #444444);
-        -webkit-box-shadow: inset 0px 0px 2px 2px #333333, 0px 1px #353535;
-        box-shadow: inset 0px 0px 2px 2px #333333, 0px 1px #353535; }
+        background-image: linear-gradient(top, #333333, #444444); }
 
 .project {
   zoom: 1;
@@ -328,9 +339,8 @@ header {
   float: left;
   margin-right: 2.35765%;
   width: 100%;
-  margin-bottom: 3.236em;
   display: inline-block;
-  margin-right: 0; }
+  padding: 6.472em 0; }
   .project:before, .project:after {
     content: "";
     display: table; }
@@ -338,8 +348,8 @@ header {
     clear: both; }
   .project:last-child {
     margin-right: 0; }
-  .project:last-child {
-    margin-bottom: 0; }
+  .project:first-child {
+    padding-top: 0; }
   .project aside.info {
     display: block;
     float: left;
@@ -387,8 +397,8 @@ header {
         float: left;
         margin-right: 2.35765%;
         width: 100%;
-        margin: 3.236em 0;
-        border-bottom: 1px dotted black; }
+        border-bottom: 1px dotted black;
+        margin: 3.236em 0; }
         .project section.screenshots:last-child {
           margin-right: 0; }
         .project section.screenshots:last-child {
@@ -406,19 +416,16 @@ header {
       margin-bottom: 3.236em; }
       .project section.screenshots img:last-child {
         margin-right: 0; }
-      @media screen and (max-width: 540px) {
-        .project section.screenshots img {
-          margin-top: 0; }
-          .project section.screenshots img:last-child {
-            margin-bottom: 0; } }
+      .project section.screenshots img:last-child {
+        margin-bottom: 0; }
 
-@media screen and (max-width: 520px) {
-  .footer-wrapper {
-    margin-top: 0;
-    background-color: #222;
-    border-top: none;
-    padding-top: 2rem;
-    height: 8em; } }
+.footer-wrapper {
+  background-color: #1f1f1f;
+  border-top: 1px solid #2d2d2d;
+  padding: 1.618em 0; }
+  @media screen and (max-width: 520px) {
+    .footer-wrapper {
+      border-top: none; } }
 
 footer {
   zoom: 1;
@@ -440,8 +447,8 @@ footer {
         text-align: center; } }
     footer ul.links li {
       display: inline-block;
-      padding-top: 5px;
-      margin-left: 1em; }
+      margin-left: 1em;
+      padding-top: 5px; }
       @media screen and (max-width: 520px) {
         footer ul.links li {
           margin-left: 1em;
@@ -449,8 +456,10 @@ footer {
       footer ul.links li:first-child {
         margin-left: 0; }
     footer ul.links a {
-      color: #333;
-      font-size: 3rem;
+      color: #474747;
+      font-size: 2rem;
+      margin: 0;
+      padding: 0;
       text-shadow: 0px 1px #333; }
       @media screen and (max-width: 520px) {
         footer ul.links a#twitter {
@@ -472,16 +481,3 @@ footer {
       footer ul.links a#email:hover {
         color: #bc4212;
         text-shadow: none; }
-
-a:hover {
-  -webkit-transition: all 0.15s ease-out 0;
-  -moz-transition: all 0.15s ease-out 0;
-  -ms-transition: all 0.15s ease-out 0;
-  -o-transition: all 0.15s ease-out 0;
-  transition: all 0.15s ease-out 0; }
-
-p.visit-wrap {
-  margin-top: 1.618em; }
-
-a.visit {
-  margin-top: 1.618em; }
