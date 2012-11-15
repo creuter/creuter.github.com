@@ -8,6 +8,7 @@
     <link href="webfonts/ss-social.css" rel="stylesheet" />
     <meta name="viewport" content="width=device-width; initial-scale=1.0">
     <script type="text/javascript" src="//use.typekit.net/bql7kxs.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
     <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
   </head>
   <body>
@@ -15,7 +16,7 @@
     <section class="container">
       <header>
         <hgroup>
-          <h1>Christian Reuter</h1>
+          <h1 id="hinge">Christian Reuter</h1>
           <h3>Web &amp; Interface Designer, Front-End Developer</h3>
         </hgroup>
         <section id="contact">
@@ -79,7 +80,7 @@
     </section>
   </div>
 
-    <div class="presence wrapper">
+  <div class="presence wrapper">
     <section class="container">
       <section class="project ">
         <aside class="info">
@@ -93,8 +94,7 @@
         </section>
       </section>
     </section>
-  </section>
-</div>
+  </div>
 
     <section class="footer-wrapper">
       <section class="container">
@@ -106,6 +106,14 @@
             <li><a href="http://github.com/jcreuter" id="github" class="ss-icon">github</a></li>
             <li><a href="http://twitter.com/ufotofu" id="twitter" class="ss-icon">twitter</a></li>
           </ul>
+
+          <script>
+            $(document).ready(function() {
+              $('#hinge').click(function() {
+                $(this).addClass('hinge');
+              });
+            });
+          </script>
 
         </footer>
       </section>

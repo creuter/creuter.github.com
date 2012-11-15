@@ -67,9 +67,24 @@ header {
     margin: lh() 0;
   }
 
+  h1 {
+    @include hide-text;
+    @extend .animated;
+    @extend .clickable;
+    background-image: url('/images/name.png');
+    height: 34px;
+    width: 236px;
+    background-repeat: no-repeat;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
   h3 {
     text-transform: none;
     margin-bottom: 0;
+    margin-top: .5em;
   }
 
   hgroup {
