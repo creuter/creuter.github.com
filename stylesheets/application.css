@@ -52,12 +52,12 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
-.force3d, .animation-slideup, footer ul.links a#twitter:hover {
+.force3d, .animation-slideup {
   -webkit-backface-visibility: hidden;
   -webkit-perspective: 1000;
   -webkit-transform-style: preserve-3d; }
 
-.animation-slideup, footer ul.links a#twitter:hover {
+.animation-slideup {
   -webkit-animation-name: slideup;
   -moz-animation-name: slideup;
   animation-name: slideup;
@@ -420,7 +420,7 @@ header {
         margin-bottom: 0; }
 
 .footer-wrapper {
-  background-color: #1f1f1f;
+  background-color: #1e1e1e;
   border-top: 1px solid #2d2d2d;
   padding: 1.618em 0; }
   @media screen and (max-width: 520px) {

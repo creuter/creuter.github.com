@@ -180,7 +180,7 @@ header {
 }
 
 .footer-wrapper {
-  background-color: #1f1f1f;
+  background-color: #1e1e1e;
   border-top: 1px solid #2d2d2d;
   padding: lh() 0;
 
@@ -243,7 +243,6 @@ footer {
 
       &#twitter:hover {
         color: #00acee;
-        @extend .animation-slideup;
        }
 
       &#dribbble:hover {
@@ -263,5 +262,4 @@ footer {
     }
   }
 }
-
 
