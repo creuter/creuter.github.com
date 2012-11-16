@@ -71,6 +71,7 @@ header {
     @include hide-text;
     @extend .animated;
     @extend .clickable;
+    @include image-2x('/images/name2x.png', 236px, 34px);
     background-image: url('/images/name.png');
     height: 34px;
     width: 236px;
