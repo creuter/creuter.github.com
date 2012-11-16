@@ -198,10 +198,6 @@ header {
 .footer-wrapper {
   background-color: #1e1e1e;
   padding: lh() 0;
-
-  @include breakpoint(max-width 520px) {
-    border-top: none;
-  }
 }
 
 footer {
@@ -209,20 +205,32 @@ footer {
 
   ul.links {
     @include transition;
+    @include user-select(none);
     text-align: right;
 
     @include breakpoint(max-width 520px) {
       text-align: center;
+      margin: 0 auto;
     }
 
     li {
+      @include border-radius(50%);
+      @include box-shadow(0px 1px #313131);
+      @include linear-gradient(#2a2a2a, #1e1e1e);
+      @include user-select(none);
+      border: 5px solid #111;
       display: inline-block;
+      height: 4.375rem;
       margin-left: 1em;
-      padding-top: 5px;
+      position: relative;
+      text-align: center;
+      width: 4.375rem;
 
       @include breakpoint(max-width 520px) {
-        margin-left: 1em;
-        padding-top: 0;
+        border: 3px solid #111;
+        width: 3.5rem;
+        height: 3.5rem;
+        margin-left: .5em;
       }
 
       &:first-child {
@@ -231,13 +239,28 @@ footer {
     }
 
     a {
-      color: #474747;
+      @include border-radius(50%);
+      @include user-select(none);
+      @include transition(none);
+      color: black;
+      display: block;
+      height: 3.25rem;
+      width: 3.25rem;
       font-size: 2rem;
       margin: 0;
-      padding: 0;
+      padding-top: 14px;
       text-shadow: 0px 1px #333;
+      position: absolute;
+      top: 4px;
+      left: 4px;
 
       @include breakpoint(max-width 520px) {
+        height: 2.5rem;
+        font-size: 1.5rem;
+        left: 5px;
+        padding-top: 11px;
+        top: 5px;
+        width: 2.5rem;
 
         &#twitter {
           color: #00acee;
@@ -256,23 +279,58 @@ footer {
         }
       }
 
-      &#twitter:hover {
-        color: #00acee;
-       }
-
-      &#dribbble:hover {
-        color: #f15e95;
-        text-shadow: none;
+      &:active {
+        @include linear-gradient(#1e1e1e, #2a2a2a);
+        text-shadow: 0px 1px black;
       }
 
-      &#github:hover {
-        color: #aaa;
-        text-shadow: none;
+      &#twitter {  
+
+        &:hover {
+          color: desaturate(#00acee, 50%);
+          text-shadow: none;
+        }
+
+        &:active {
+          color: #00acee;
+        }
       }
 
-      &#email:hover {
-        color: #bc4212;
-        text-shadow: none;
+      &#dribbble {
+
+        &:hover {
+          color: desaturate(#f15e95, 50%);
+          text-shadow: none;
+        }
+
+        &:active {
+          color: #f15e95;
+        }
+      }
+
+      &#github {
+
+        &:hover {
+          color: #999;
+          text-shadow: none;
+        }
+
+        &:active {
+          color: #aaa;
+        }
+      }
+
+      &#email {
+      
+        &:hover {
+          color: desaturate(#bc4212, 50%);
+          text-shadow: none;
+        }
+
+        &:active {
+          color: #bc4212;
+          text-shadow: 0px 1px black;
+        }
       }
     }
   }
