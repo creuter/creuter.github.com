@@ -7,33 +7,7 @@
   background-image: unquote("linear-gradient(left, #{$values})");
 }
 
-@function gradient-stops($grid-columns, $color: $visual-grid-color) {
-  $transparent: rgba(0,0,0,0);
-
-  $column-width: flex-grid(1, $grid-columns);
-  $gutter-width: flex-gutter($grid-columns);
-  $column-offset: $column-width;
-
-  $values: ($transparent 0, $color 0);
-
-  @for $i from 1 to $grid-columns*2 {
-    @if is-even($i) {
-      $values: append($values, $transparent $column-offset);
-      $values: append($values, $color $column-offset);
-      $column-offset: $column-offset + $column-width;
-    }
-
-    @else {
-      $values: append($values, $color $column-offset);
-      $values: append($values, $transparent $column-offset);
-      $column-offset: $column-offset + $gutter-width;
-    }
-  }
-
-  @return $values;
-}
-
-@if $visual-grid == true {
+@if $visual-grid == true or $visual-grid == yes {
   body:before {
     content: '';
     display: inline-block;
@@ -46,6 +20,7 @@
     position: fixed;
     right: 0;
     width: 100%;
+    pointer-events: none;
 
     @if $visual-grid-index == back {
       z-index: -1;
@@ -57,7 +32,7 @@
 
     @each $breakpoint in $visual-grid-breakpoints {
       @if $breakpoint != nil {
-        @include breakpoint($breakpoint) {
+        @include media($breakpoint) {
           @include grid-column-gradient(gradient-stops($grid-columns));
         }
       }

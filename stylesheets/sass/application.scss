@@ -1,4 +1,3 @@
-
 @import 'bourbon/bourbon';
 @import 'base-variables';
 
@@ -13,41 +12,37 @@
     line-height: lh();
     font-family: $serif;
   }
-  
-  h1 { 
+
+  h1 {
     font-size: 1.5em; 
   }
-  
-  h2 { 
+
+  h2 {
     font-size: 1.3em;
   }
-  
-  h3 { 
+
+  h3 {
     margin-bottom: lh();
   }
-  
-  p { 
+
+  p {
     line-height: lh(.8);
     font-family: $sans;
-   }
+  }
 
   em {
     font-style: italic;
   }
 
-  a:hover {
-    @include transition;
-  }
-
   a.visit {
     margin-top: lh();
-    @extend .external-link;
+    @extend %external-link;
   }
 
   p.visit-wrap {
     margin-top: lh();
   }
- }
+}
 
 .container {
   @include outer-container;
@@ -93,21 +88,22 @@ header {
     @include breakpoint(max-width 520px) {
       @include span-columns(12);
     }
-   }
+  }
 
   #contact {
-    @include span-columns(4); 
+    @include span-columns(4);
     padding-top: lh(.5);
 
     @include breakpoint(max-width 520px) {
       @include span-columns(12);
     }
 
-    a.button { 
+    a.button {
       @include appearance(none);
-      @include border-radius(3px);
       @include box-shadow(inset 0px 0px 1px 1px rgba(255,255,255,.1), 0 1px 1px black);
       @include linear-gradient(#f1d17d, #dfc06b);
+      @include transition;
+      border-radius: 3px;
       border: 1px solid $border-color;
       color: #725710;
       display: block;
@@ -183,9 +179,9 @@ header {
     }
 
     img {
-      @include border-radius(2px);
       @include box-shadow(0 2px 2px black);
       @include span-columns(12);
+      border-radius: .125em;
       margin-bottom: lh(2);
 
       &:last-child {
@@ -196,7 +192,6 @@ header {
 }
 
 .footer-wrapper {
-  background-color: #1e1e1e;
   padding: lh() 0;
 }
 
@@ -204,7 +199,6 @@ footer {
   @include row;
 
   ul.links {
-    @include transition;
     @include user-select(none);
     text-align: right;
 
@@ -214,124 +208,94 @@ footer {
     }
 
     li {
-      @include border-radius(50%);
-      @include box-shadow(0px 1px #313131);
-      @include linear-gradient(#2a2a2a, #1e1e1e);
-      @include user-select(none);
-      border: 5px solid #111;
       display: inline-block;
-      height: 4.375rem;
-      margin-left: 1em;
-      position: relative;
-      text-align: center;
-      width: 4.375rem;
-
-      @include breakpoint(max-width 520px) {
-        border: 3px solid #111;
-        width: 3.5rem;
-        height: 3.5rem;
-        margin-left: .5em;
-      }
+      margin-left: 1.5em;
 
       &:first-child {
         margin-left: 0;
       }
     }
+  }
+}
 
-    a {
-      @include border-radius(50%);
-      @include user-select(none);
-      @include transition(none);
-      color: black;
-      display: block;
-      height: 3.25rem;
-      width: 3.25rem;
-      font-size: 2rem;
-      margin: 0;
-      padding-top: 14px;
-      text-shadow: 0px 1px #333;
-      position: absolute;
-      top: 4px;
-      left: 4px;
+ul.links li a {
+  @include user-select(none);
+  color: rgba(255,255,255,.1);
+  display: block;
 
-      @include breakpoint(max-width 520px) {
-        height: 2.5rem;
-        font-size: 1.5rem;
-        left: 5px;
-        padding-top: 11px;
-        top: 5px;
-        width: 2.5rem;
+  > i {
+    display: block;
+    font-size: 36px;
+    height: 36px;
+    line-height: 46px;
+    position: relative;
+    width: 36px;
 
-        &#twitter {
-          color: #00acee;
-        }
-
-        &#dribbble {
-          color: #f15e95;
-        }
-
-        &#github {
-          color: #aaa;
-        }
-
-        &#email {
-          color: #bc4212;
-        }
-      }
-
-      &:active {
-        @include linear-gradient(#1e1e1e, #2a2a2a);
-        text-shadow: 0px 1px black;
-      }
-
-      &#twitter {  
-
-        &:hover {
-          color: desaturate(#00acee, 50%);
-          text-shadow: none;
-        }
-
-        &:active {
-          color: #00acee;
-        }
-      }
-
-      &#dribbble {
-
-        &:hover {
-          color: desaturate(#f15e95, 50%);
-          text-shadow: none;
-        }
-
-        &:active {
-          color: #f15e95;
-        }
-      }
-
-      &#github {
-
-        &:hover {
-          color: #999;
-          text-shadow: none;
-        }
-
-        &:active {
-          color: #aaa;
-        }
-      }
-
-      &#email {
-      
-        &:hover {
-          color: desaturate(#bc4212, 50%);
-          text-shadow: none;
-        }
-
-        &:active {
-          color: #bc4212;
-          text-shadow: 0px 1px black;
-        }
-      }
+    &:hover {
+      @include animation(woggle .35s);
+      @extend %force3d;
     }
+
+    > .pulse {
+      @include transition(.275s cubic-bezier(0.25, 0.75, 0.15, 1.5));
+      background: none;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,.1);
+      bottom: 0;
+      left: 0;
+      opacity: 0;
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+  }
+
+  &:hover {
+    .pulse {
+      @include transform(scale(1.5));
+      opacity: 1;
+    }
+  }
+
+  @include breakpoint(max-width 520px) {
+    &#twitter {
+      color: $twitter;
+    }
+
+    &#dribbble {
+      color: $dribbble;
+    }
+
+    &#github {
+      color: $github;
+    }
+
+    &#email {
+      color: $email;
+    }
+
+    &#rdio {
+      color: $rdio;
+    }
+  }
+
+  &#twitter {
+    @include icon($twitter);
+  }
+
+  &#dribbble {
+    @include icon($dribbble);
+  }
+
+  &#github {
+    @include icon($github);
+  }
+
+  &#email {
+    @include icon($email);
+  }
+
+  &#rdio {
+    @include icon($rdio);
   }
 }

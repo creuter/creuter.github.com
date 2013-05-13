@@ -22,10 +22,16 @@ $serif: 'chaparral-pro', $georgia;
 
 $lh: golden-ratio(1em, 1);
 
+$twitter: #1DCAFF;
+$github: #999;
+$email: #DB4336;
+$dribbble: #f15e95;
+$rdio: #008FD5;
+
+
 @function lh($amount: 1) {
   @return $lh * $amount;
 }
-
 
 // Grid - Neat overrides
 
